@@ -1,19 +1,20 @@
 import Pokecard from "./Pokecard";
 
-function Pokedex({POKEMON}){
-  // ul
-  // IF array of pokemon
-  // Pokecard component for each pokemon object
-
+/* Pokedex component for pokedex app
+ * props = Pokemon (array of pokemon objects)
+ ** pokemon objects look like: {id:int, name:string, type:string, base_experience:int}
+ * displays each pokemon as a bootstrap card (using the pokecard component)
+ */
+function Pokedex({pokemon}){
   return (
-    <div className="pokedex">
-      { POKEMON.map(mon => Pokecard(mon)) }
+    <div className="Pokedex">
+      { pokemon.map(mon => Pokecard(mon)) }
     </div>
   )
 
 }
 
-let POKEMON = [
+const POKEMON = [
 {id: 4,   name: 'Charmander', type: 'fire',     base_experience: 62},
 {id: 7,   name: 'Squirtle',   type: 'water',    base_experience: 63},
 {id: 11,  name: 'Metapod',    type: 'bug',      base_experience: 72},
@@ -24,6 +25,6 @@ let POKEMON = [
 {id: 133, name: 'Eevee',      type: 'normal',   base_experience: 65}
 ];
 
-Pokedex.defaultProps = {POKEMON};
+Pokedex.defaultProps = {pokemon:POKEMON};
 
 export default Pokedex;
