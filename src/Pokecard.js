@@ -1,3 +1,5 @@
+import "./Pokecard.css"
+
 /* Pokecard component for pokedex app
  * Props = {id:int, name:string, type:string, base_experience:int}
  * Returns a bootstrap Card with the props
